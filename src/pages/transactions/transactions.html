@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar [color]="getColorByTransaction()">
+      <ion-title>
+        Transacciones
+      </ion-title>
+      <ion-segment [(ngModel)]="typeTransaction" color="contrast-white">
+            <ion-segment-button value="ingreso">
+                Ingreso
+              </ion-segment-button>
+              <ion-segment-button value="gasto">
+                Gasto
+              </ion-segment-button>
+        </ion-segment>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div [ngSwitch]="typeTransaction">
+        <ion-list *ngSwitchCase="'ingreso'">
+            <ion-item>
+                <ion-label fixed>Valor</ion-label>
+                <ion-input type="number" value=""></ion-input>
+            </ion-item>
+                
+            <ion-item>
+                <ion-label fixed>Fecha</ion-label>
+                <ion-input type="password"></ion-input>
+            </ion-item>
+        </ion-list>
+    </div>
+    <a (click)="goHome()">hola</a>
+  </ion-content>
