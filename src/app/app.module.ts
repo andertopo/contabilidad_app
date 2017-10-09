@@ -7,12 +7,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Transactions } from '../pages/transactions/transactions';
+import { Categories } from '../pages/categories/categories';
+import { CategoriesFactory } from '../factories/categoriesFactory';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    Transactions
+    Transactions,
+    Categories
   ],
   imports: [
     BrowserModule,
@@ -22,11 +25,13 @@ import { Transactions } from '../pages/transactions/transactions';
   entryComponents: [
     MyApp,
     HomePage,
-    Transactions
+    Transactions,
+    Categories
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    CategoriesFactory,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

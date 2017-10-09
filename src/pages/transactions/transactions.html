@@ -15,6 +15,21 @@
   </ion-header>
   
   <ion-content padding>
+    <ion-fab middle="" right="" class="floating-action">
+        <button ion-fab color="danger">
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <ion-fab-list side="top">
+            <button ion-fab class="option" color="primary">
+                <ion-icon name="home"></ion-icon>
+                <div class="fab-label">Nuevo Ingreso</div>
+            </button>
+            <button ion-fab class="option">
+                <span class="flaticon-people"></span>
+                <div class="fab-label">Nuevo gasto</div>
+            </button>
+        </ion-fab-list>
+    </ion-fab>
     <div [ngSwitch]="typeTransaction">
         <ion-list *ngSwitchCase="'ingreso'">
             <ion-item>
@@ -29,4 +44,5 @@
         </ion-list>
     </div>
     <a (click)="goHome()">hola</a>
+    <a (click)="goCategory()">Categoria</a>
   </ion-content>

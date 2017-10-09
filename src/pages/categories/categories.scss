@@ -1,0 +1,22 @@
+.floating-action {
+    //bottom: 65px;
+    //z-index: 1;
+    
+    .option {
+        text-align: center;
+        overflow: visible;
+    }
+    .fab-label {
+        position: absolute;
+        background: lightslategrey;
+        height: 24px;
+        line-height: 16px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+        margin-left: -185px;
+    }
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
+import { Categories } from '../categories/categories';
 
 @Component({
   selector: 'Transactions',
@@ -16,8 +17,8 @@ export class Transactions {
       this.navCtrl.setRoot(HomePage);
   }
 
-  changeColor() {
-
+  goCategory() {
+    this.navCtrl.setRoot(Categories);
   }
 
   getColorByTransaction() {
