@@ -8,14 +8,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Transactions } from '../pages/transactions/transactions';
 import { Categories } from '../pages/categories/categories';
+import { Subcategories } from '../pages/subcategories/subcategories';
 import { CategoriesFactory } from '../factories/categoriesFactory';
+import { SubcategoriesFactory } from '../factories/subcategoriesFactory';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     Transactions,
-    Categories
+    Categories,
+    Subcategories
   ],
   imports: [
     BrowserModule,
@@ -26,12 +29,14 @@ import { CategoriesFactory } from '../factories/categoriesFactory';
     MyApp,
     HomePage,
     Transactions,
-    Categories
+    Categories,
+    Subcategories
   ],
   providers: [
     StatusBar,
     SplashScreen,
     CategoriesFactory,
+    SubcategoriesFactory,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

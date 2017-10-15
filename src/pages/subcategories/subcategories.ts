@@ -5,17 +5,19 @@ import { ToastController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 import { CategoriesFactory } from '../../factories/categoriesFactory';
+import { SubcategoriesFactory } from '../../factories/subcategoriesFactory';
+import { SubcategoryObject } from '../../interfaces/SubcategoryInterface';
 import { CategoryObject } from '../../interfaces/CategoryInterface';
 
 @Component({
-  selector: 'Categories',
-  templateUrl: 'categories.html'
+  selector: 'subcategories',
+  templateUrl: 'subcategories.html'
 })
-export class Categories {
+export class Subcategories {
     typeTransaction: string = 'ingresos';
     public categoriesItems: Array<CategoryObject> = new Array<CategoryObject>();
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public categoryFactory: CategoriesFactory, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public categoryFactory: CategoriesFactory, public subcategoryFactory: SubcategoriesFactory, public toastCtrl: ToastController) {
       this.getCategories();
   }
 
@@ -25,7 +27,7 @@ export class Categories {
 
   createCategory() {
     const alert = this.alertCtrl.create({
-        title: 'Nueva Categoría',
+        title: 'Nueva subcategoría',
         inputs: [
           {
             name: 'nombre',
@@ -44,7 +46,7 @@ export class Categories {
             text: 'Crear',
             handler: data => {
               console.log("categoría creada");
-              this.categoryFactory.addCategory(this.typeTransaction, data.nombre);
+              this.subcategoryFactory.addSubcategory(this.typeTransaction, "alimentacion", data.nombre);
               this.getCategories();
               const toast = this.toastCtrl.create({
                 message: 'Se ha agregado la categoría',
@@ -65,10 +67,7 @@ export class Categories {
   }
 
   getCategories() {
-      console.log(this.typeTransaction);
-      console.log(this.categoryFactory.getCategories(this.typeTransaction));
       this.categoriesItems = this.categoryFactory.getCategories(this.typeTransaction);
-      console.log(this.categoriesItems);
   }
 
   getColorByTransaction() {
