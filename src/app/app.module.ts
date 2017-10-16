@@ -13,6 +13,8 @@ import { Subcategories } from '../pages/subcategories/subcategories';
 import { SubcategoryAdd } from '../pages/subcategories/add/subcategoryAdd';
 import { CategoriesFactory } from '../factories/categoriesFactory';
 import { SubcategoriesFactory } from '../factories/subcategoriesFactory';
+import { DbProvider } from '../factories/SqLiteFactory';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { SubcategoriesFactory } from '../factories/subcategoriesFactory';
     SplashScreen,
     CategoriesFactory,
     SubcategoriesFactory,
+    DbProvider,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
