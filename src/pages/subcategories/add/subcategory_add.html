@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar color="{{typeTransaction}}">
+        <ion-title>
+            Agregar Sub-Categoria - {{ typeTransaction }}
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()"><ion-icon name="close"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+        <form>
+            <ion-item>
+                <ion-label fixed>Nombre</ion-label>
+                <ion-input [(ngModel)]="form.nombre" name="nombre" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Categoria</ion-label>
+                <ion-select [(ngModel)]="form.category" name="category" [ngModelOptions]="{standalone: true}">
+                    <ion-option *ngFor="let category of categories; let i = index" [value]="i">{{category.category_name}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <button ion-button center color="{{ typeTransaction }}" (click)="closeModal()">Agregar Categoria</button>
+        </form>
+
+</ion-content>

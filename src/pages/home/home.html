@@ -1,15 +1,23 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+        <ion-select small>
+            <ion-option selected="true">Octubre</ion-option>
+            <ion-option>Noviembre</ion-option>
+            <ion-option>Diciembre</ion-option>
+        </ion-select>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster Anderson...
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-    
-  </p>
+  <ion-card>
+    <ion-card-header>Transacciones</ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>Gastos Generales</ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>Balance Mensual</ion-card-header>
+  </ion-card>
 </ion-content>

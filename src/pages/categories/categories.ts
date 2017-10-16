@@ -72,13 +72,8 @@ export class Categories {
   }
 
   getColorByTransaction() {
-      if(this.typeTransaction === 'ingresos') {
-          this.getCategories();
-          return 'secondary';
-      } else {
-          this.getCategories();
-          return 'danger'
-      }
+    this.getCategories();
+    return this.typeTransaction;
   }
 
 }

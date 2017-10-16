@@ -8,20 +8,20 @@ export class SubcategoriesFactory {
 
  constructor(public categoryFactory:CategoriesFactory) {}
 
- addSubcategory(typeTransaction, category, subcategory_name) {
+ addSubcategory(typeTransaction: string, categoryIndex: number, subcategory_name: string) {
      let subcategoryObj:SubcategoryObject = {
          subcategory_name: subcategory_name
      }
-     console.log("almacenando subcategoría " + typeTransaction + " -- " + category + " -- " + subcategory_name);
+     console.log("almacenando subcategoría " + typeTransaction + " -- " + categoryIndex + " -- " + subcategory_name);
 
      console.log(subcategoryObj);
-     let catogories = this.categoryFactory.getCategories(typeTransaction);
-     console.log(catogories);
-     //catogories[category].subcategories.push(subcategoryObj);
+     let categories = this.categoryFactory.getCategories(typeTransaction);
+     console.log(categories);
+     categories[categoryIndex].subcategories.push(subcategoryObj);
  }
  
- getSubcategories(typeTransaction, category) {
-    return this.categoryFactory.getCategories(typeTransaction)[category].subcategories;
+ getSubcategories(typeTransaction: string, categoryIndex: number) {
+    return this.categoryFactory.getCategories(typeTransaction)[categoryIndex].subcategories;
  }
 }
 

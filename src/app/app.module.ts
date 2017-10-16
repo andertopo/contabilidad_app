@@ -6,9 +6,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 import { Transactions } from '../pages/transactions/transactions';
 import { Categories } from '../pages/categories/categories';
 import { Subcategories } from '../pages/subcategories/subcategories';
+import { SubcategoryAdd } from '../pages/subcategories/add/subcategoryAdd';
 import { CategoriesFactory } from '../factories/categoriesFactory';
 import { SubcategoriesFactory } from '../factories/subcategoriesFactory';
 
@@ -16,9 +18,11 @@ import { SubcategoriesFactory } from '../factories/subcategoriesFactory';
   declarations: [
     MyApp,
     HomePage,
+    TabsPage,
     Transactions,
     Categories,
-    Subcategories
+    Subcategories,
+    SubcategoryAdd
   ],
   imports: [
     BrowserModule,
@@ -28,9 +32,11 @@ import { SubcategoriesFactory } from '../factories/subcategoriesFactory';
   entryComponents: [
     MyApp,
     HomePage,
+    TabsPage,
     Transactions,
     Categories,
-    Subcategories
+    Subcategories,
+    SubcategoryAdd
   ],
   providers: [
     StatusBar,

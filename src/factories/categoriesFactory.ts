@@ -50,7 +50,7 @@ export class CategoriesFactory {
     this.categoriesGastos.push(categoryObj4);
  }
 
- addCategory(typeTransaction, category) {
+ addCategory(typeTransaction: string, category: string) {
      let categoryObj:CategoryObject = {
          category_name: category,
          category_icon: '',
@@ -69,7 +69,7 @@ export class CategoriesFactory {
      }
  }
  
- getCategories(typeTransaction) {
+ getCategories(typeTransaction: string) {
     if(typeTransaction == 'ingresos') {
         return this.categoriesIngresos;
     } else if(typeTransaction == 'gastos') {
