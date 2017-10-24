@@ -5,7 +5,6 @@ import { ToastController } from 'ionic-angular';
 
 import { CategoriesFactory } from '../../factories/categoriesFactory';
 import { SubcategoriesFactory } from '../../factories/subcategoriesFactory';
-import { SubcategoryObject } from '../../interfaces/SubcategoryInterface';
 import { CategoryObject } from '../../interfaces/CategoryInterface';
 import { SubcategoryAdd } from './add/subcategoryAdd';
 
@@ -33,12 +32,11 @@ export class Subcategories {
   }
 
   getCategories() {
-      this.categoriesItems = this.categoryFactory.getCategories(this.typeTransaction);
+      this.categoriesItems = this.subcategoryFactory.getSubcategories(this.typeTransaction);
   }
 
-  getColorByTransaction() {
+  ionViewDidLoad() {
     this.getCategories();
-    return this.typeTransaction
   }
 
 }

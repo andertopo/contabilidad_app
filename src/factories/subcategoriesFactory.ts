@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CategoriesFactory } from './categoriesFactory'
-import { CategoryObject } from '../interfaces/CategoryInterface';
+import { SubcategoryDAO } from './SQLite/SubcategoriesDAOFactory';
 import { SubcategoryObject } from '../interfaces/SubcategoryInterface';
 
 @Injectable()
 export class SubcategoriesFactory {
 
- constructor(public categoryFactory:CategoriesFactory) {}
+ constructor(public subcategoryDAO:SubcategoryDAO) {}
 
  addSubcategory(typeTransaction: string, categoryIndex: number, subcategory_name: string) {
      let subcategoryObj:SubcategoryObject = {
@@ -15,13 +14,13 @@ export class SubcategoriesFactory {
      console.log("almacenando subcategoría " + typeTransaction + " -- " + categoryIndex + " -- " + subcategory_name);
 
      console.log(subcategoryObj);
-     let categories = this.categoryFactory.getCategories(typeTransaction);
-     console.log(categories);
-     categories[categoryIndex].subcategories.push(subcategoryObj);
+     //let categories = this.categoryFactory.getCategories(typeTransaction);
+     //console.log(categories);
+     //categories[categoryIndex].subcategories.push(subcategoryObj);
  }
  
- getSubcategories(typeTransaction: string, categoryIndex: number) {
-    return this.categoryFactory.getCategories(typeTransaction)[categoryIndex].subcategories;
+ getSubcategories(typeTransaction: string) {
+    return this.subcategoryDAO.getSubcategories(typeTransaction);
  }
 }
 

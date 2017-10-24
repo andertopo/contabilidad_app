@@ -10,7 +10,7 @@ import { Subcategories } from '../subcategories/subcategories';
   templateUrl: 'transactions.html'
 })
 export class Transactions {
-    typeTransaction: string = 'ingreso';
+    typeTransaction: string = 'ingresos';
 
   constructor(public navCtrl: NavController) {}
 
@@ -26,11 +26,7 @@ export class Transactions {
   }
 
   getColorByTransaction() {
-      if(this.typeTransaction === 'ingreso') {
-          return 'secondary';
-      } else {
-          return 'danger'
-      }
+      return this.typeTransaction;
   }
 
 }

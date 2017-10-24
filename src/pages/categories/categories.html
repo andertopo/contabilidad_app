@@ -1,9 +1,9 @@
 <ion-header>
-    <ion-navbar [color]="getColorByTransaction()">
+    <ion-navbar [color]="typeTransaction">
         <ion-title>
             Categorias
         </ion-title>
-        <ion-segment [(ngModel)]="typeTransaction" color="contrast-white">
+        <ion-segment [(ngModel)]="typeTransaction" color="contrast-white" (ionChange)="getCategories()">
             <ion-segment-button value="ingresos">Ingresos</ion-segment-button>
             <ion-segment-button value="gastos">Gastos</ion-segment-button>
         </ion-segment>
@@ -12,13 +12,13 @@
 
 <ion-content padding>
     <ion-fab bottom="" right="">
-        <button ion-fab color="danger" (click)="createCategory()">
+        <button ion-fab [color]="typeTransaction" (click)="createCategory()">
             <ion-icon name="add"></ion-icon>
         </button>
     </ion-fab>
     <ion-list [virtualScroll]="categoriesItems" approxItemHeight="100px" approxItemHeight="40px">
         <ion-item *virtualItem="let categoriesItem">
-            <ion-icon color="light" item-start="" class="icon-circle" name="construct"></ion-icon>
+            <ion-icon color="light" item-start="" [ngClass]="typeTransaction" class="icon-circle" [name]="categoriesItem.category_icon"></ion-icon>
             <ion-label fixed>{{categoriesItem.category_name}}</ion-label>
         </ion-item>
     </ion-list>

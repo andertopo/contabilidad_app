@@ -4,6 +4,16 @@
     -webkit-border-radius:50%;
     border-radius: 50%;
     
-    border: 1px solid #32db64;
-    background-color: #32db64;
+    border: 1px solid color($colors, secondary);
+    background-color: color($colors, secondary);
+  }
+
+  .ingresos {
+    border: 1px solid color($colors, ingresos);
+    background-color: color($colors, ingresos);
+  }
+
+  .gastos {
+    border: 1px solid color($colors, gastos);
+    background-color: color($colors, gastos);
   }

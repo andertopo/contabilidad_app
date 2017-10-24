@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Transactions } from '../transactions/transactions';
 import { Categories } from '../categories/categories';
-import { Subcategories } from '../subcategories/subcategories';
+import { Options } from '../options/options';
 import { HomePage } from '../home/home';
 
 @Component({
@@ -13,9 +13,7 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = Transactions;
   tab3Root = Categories;
-  tab4Root = Subcategories;
+  tab4Root = Options;
 
-  constructor() {
-
-  }
+  constructor() {}
 }

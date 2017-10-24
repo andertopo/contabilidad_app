@@ -16,7 +16,7 @@ export class Categories {
     public categoriesItems: Array<CategoryObject> = new Array<CategoryObject>();
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public categoryFactory: CategoriesFactory, public toastCtrl: ToastController) {
-      this.getCategories();
+      //this.getCategories();
   }
 
   goHome() {
@@ -64,16 +64,12 @@ export class Categories {
       alert.present();
   }
 
+  ionViewDidLoad() {
+    this.getCategories();
+  }
+
   getCategories() {
-      console.log(this.typeTransaction);
-      console.log(this.categoryFactory.getCategories(this.typeTransaction));
       this.categoriesItems = this.categoryFactory.getCategories(this.typeTransaction);
       console.log(this.categoriesItems);
   }
-
-  getColorByTransaction() {
-    this.getCategories();
-    return this.typeTransaction;
-  }
-
 }

@@ -11,10 +11,22 @@ import { Transactions } from '../pages/transactions/transactions';
 import { Categories } from '../pages/categories/categories';
 import { Subcategories } from '../pages/subcategories/subcategories';
 import { SubcategoryAdd } from '../pages/subcategories/add/subcategoryAdd';
+import { Options } from '../pages/options/options';
+import { Dreams } from '../pages/dreams/dreams';
+import { DreamAdd } from '../pages/dreams/add/dreamAdd'
+
+import { ProgressBarComponent } from '../pages/globals/progress-bar/ProgressBarComponent';
+
 import { CategoriesFactory } from '../factories/categoriesFactory';
 import { SubcategoriesFactory } from '../factories/subcategoriesFactory';
-import { DbProvider } from '../factories/SqLiteFactory';
+import { DbProvider } from '../factories/SQLite/SqLiteFactory';
+import { SchemeFactory } from '../factories/SQLite/CreateSchemeFactory';
+import { CategoryDAO } from '../factories/SQLite/CategoriesDAOFactory';
+import { SubcategoryDAO } from '../factories/SQLite/SubcategoriesDAOFactory';
+import { DreamsFactory } from '../factories/DreamFactory';
+
 import { SQLite } from '@ionic-native/sqlite';
+import { AppPreferences } from '@ionic-native/app-preferences';
 
 @NgModule({
   declarations: [
@@ -24,7 +36,11 @@ import { SQLite } from '@ionic-native/sqlite';
     Transactions,
     Categories,
     Subcategories,
-    SubcategoryAdd
+    SubcategoryAdd,
+    Options,
+    Dreams,
+    DreamAdd,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,15 +54,24 @@ import { SQLite } from '@ionic-native/sqlite';
     Transactions,
     Categories,
     Subcategories,
-    SubcategoryAdd
+    SubcategoryAdd,
+    Options,
+    Dreams,
+    DreamAdd,
+    ProgressBarComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     CategoriesFactory,
     SubcategoriesFactory,
+    DreamsFactory,
     DbProvider,
+    SchemeFactory,
     SQLite,
+    AppPreferences,
+    CategoryDAO,
+    SubcategoryDAO,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

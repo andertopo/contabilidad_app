@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Mis Ahorros
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+    <ion-fab bottom="" right="">
+        <button ion-fab color="primary" (click)="createDream()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+    <div [virtualScroll]="dreams" approxItemHeight="180px" approxItemHeight="180px">
+        <ion-card *virtualItem="let dreamItem" [ngClass]="[dreamItem.dream_advance === 100 ? 'ion-card-success' : '']" >
+            <img *ngIf="dreamItem.dream_image" src="{{dreamItem.dream_image}}" />
+            <img *ngIf="!dreamItem.dream_image && dreamItem.dream_advance == 100" src="assets/img/dream-sucess.png" />
+            <img *ngIf="!dreamItem.dream_image && dreamItem.dream_advance != 100" src="assets/img/dream-pending.png" />
+            <!--<div *ngIf="!dreamItem.dream_image" class="empty-img"></div>-->
+            <div text-capitalize class="card-title">{{ dreamItem.dream_description }}</div>
+            <div class="card-subtitle">{{ dreamItem.dream_value }}</div>
+            <ion-card-content>
+                <div text-left class="progress-text">Progreso: {{ dreamItem.dream_current_value }} de {{ dreamItem.dream_value }}
+                </div>
+                <progress-bar [progress]="dreamItem.dream_advance"></progress-bar>
+                <button ion-button clear small color="secondary">Abonar</button>
+                <button ion-button clear small icon-right color="secondary">Editar <ion-icon name="brush"></ion-icon></button>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

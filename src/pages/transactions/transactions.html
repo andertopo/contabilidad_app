@@ -4,10 +4,10 @@
         Transacciones
       </ion-title>
       <ion-segment [(ngModel)]="typeTransaction" color="contrast-white">
-            <ion-segment-button value="ingreso">
+            <ion-segment-button value="ingresos">
                 Ingreso
               </ion-segment-button>
-              <ion-segment-button value="gasto">
+              <ion-segment-button value="gastos">
                 Gasto
               </ion-segment-button>
         </ion-segment>
@@ -16,16 +16,16 @@
   
   <ion-content padding>
     <ion-fab middle="" right="" class="floating-action">
-        <button ion-fab color="danger">
+        <button ion-fab color="error">
             <ion-icon name="add"></ion-icon>
         </button>
         <ion-fab-list side="top">
-            <button ion-fab class="option" color="primary">
+            <button ion-fab class="option" color="ingresos">
                 <ion-icon name="home"></ion-icon>
                 <div class="fab-label">Nuevo Ingreso</div>
             </button>
-            <button ion-fab class="option">
-                <span class="flaticon-people"></span>
+            <button ion-fab class="option" color="gastos">
+                <ion-icon name="home"></ion-icon>
                 <div class="fab-label">Nuevo gasto</div>
             </button>
         </ion-fab-list>
